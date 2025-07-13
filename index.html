@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Coherent Breathing</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        #box-canvas {
+            display: none;
+        }
+        .playing #box-canvas {
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 50%;
+            height: 100%;
+        }
+        #app-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .playing #app-content {
+            width: 50%;
+        }
+        .full-title {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 2em;
+        }
+        .left-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: calc(100% - 150px);
+            position: absolute;
+            top: 80px;
+        }
+        .total-time {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .instruction {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .countdown {
+            font-size: 4em;
+        }
+        .full-bottom {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+        button {
+            background: #d97706;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+        .title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        input[type="checkbox"] {
+            transform: scale(1.5);
+        }
+        input[type="text"] {
+            background: #333;
+            color: #fff;
+            border: 1px solid #555;
+            padding: 5px;
+            text-align: center;
+            width: 100px;
+        }
+        .preset-button {
+            background: #333;
+            color: #fff;
+            border: 1px solid #555;
+            padding: 5px 10px;
+            margin: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <canvas id="box-canvas"></canvas>
+        <div id="app-content"></div>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js');
+        }
+    </script>
+</body>
+</html>
