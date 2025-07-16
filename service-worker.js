@@ -1,10 +1,10 @@
-const CACHE_NAME = 'coherent-breathing-cache-v1';
+const CACHE_NAME = 'coherent-breathing-cache-v1'; // Versioned cache name
 const urlsToCache = [
   './',
   './index.html',
-  './app.js',
-  './manifest.json',
-  './icons/icon-192x192.png',
+  './app.js',           // Replace with your app’s JS file
+  './manifest.json',    // Replace with your manifest file
+  './icons/icon-192x192.png', // Adjust icon paths as needed
   './icons/icon-512x512.png'
 ];
 
